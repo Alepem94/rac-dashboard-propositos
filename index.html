@@ -102,6 +102,16 @@
         .video-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
         .video-rank { position: absolute; top: 10px; left: 10px; background: #1E3A6E; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
         .video-card:nth-child(1) .video-rank { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #333; }
+        
+        /* Instagram Video Gallery */
+        .video-gallery-ig { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 350px)); gap: 25px; justify-content: center; }
+        .video-card-ig { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: relative; padding: 15px; }
+        .video-card-ig .video-rank { position: absolute; top: 20px; left: 20px; background: #1E3A6E; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+        .video-card-ig:nth-child(1) .video-rank { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #333; }
+        .video-card-ig:nth-child(2) .video-rank { background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%); color: #333; }
+        .video-card-ig:nth-child(3) .video-rank { background: linear-gradient(135deg, #CD7F32 0%, #B87333 100%); color: white; }
+        .video-info-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-left: 45px; }
+        .video-card-ig iframe { width: 100%; height: 500px; border: none; border-radius: 8px; }
         .video-card:nth-child(2) .video-rank { background: linear-gradient(135deg, #C0C0C0 0%, #A0A0A0 100%); color: #333; }
         .video-card:nth-child(3) .video-rank { background: linear-gradient(135deg, #CD7F32 0%, #A0522D 100%); }
         .video-card video { width: 100%; height: auto; aspect-ratio: 9/16; object-fit: contain; background: #000; }
@@ -509,75 +519,55 @@
 
             <div class="section">
                 <h3 class="section-title">Top de Videos por Clics</h3>
-                <div class="video-gallery">
+                <div class="video-gallery-ig">
                     <!-- 1. Cocina - 115 clics -->
-                    <div class="video-card">
+                    <div class="video-card-ig">
                         <div class="video-rank">#1</div>
-                        <video controls preload="metadata">
-                            <source src="video_cocinas.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-info">
+                        <div class="video-info-top">
                             <div class="video-title">🍳 Cocina</div>
-                            <div class="video-stats">
-                                <span class="clics-badge">115 clics</span>
-                            </div>
+                            <span class="clics-badge">115 clics</span>
                         </div>
+                        <iframe src="https://www.instagram.com/reel/DT1lstzjm9G/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                     </div>
                     
                     <!-- 2. Motos - 82 clics -->
-                    <div class="video-card">
+                    <div class="video-card-ig">
                         <div class="video-rank">#2</div>
-                        <video controls preload="metadata">
-                            <source src="video_motos.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-info">
+                        <div class="video-info-top">
                             <div class="video-title">🏍️ Motos</div>
-                            <div class="video-stats">
-                                <span class="clics-badge">82 clics</span>
-                            </div>
+                            <span class="clics-badge">82 clics</span>
                         </div>
+                        <iframe src="https://www.instagram.com/reel/DUHgZGxCB2j/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                     </div>
                     
                     <!-- 3. Laptop - 72 clics -->
-                    <div class="video-card">
+                    <div class="video-card-ig">
                         <div class="video-rank">#3</div>
-                        <video controls preload="metadata">
-                            <source src="video_laptops.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-info">
+                        <div class="video-info-top">
                             <div class="video-title">💻 Laptop</div>
-                            <div class="video-stats">
-                                <span class="clics-badge">72 clics</span>
-                            </div>
+                            <span class="clics-badge">72 clics</span>
                         </div>
+                        <iframe src="https://www.instagram.com/reel/DT_CCGrEsRu/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                     </div>
                     
                     <!-- 4. Celular - 44 clics -->
-                    <div class="video-card">
+                    <div class="video-card-ig">
                         <div class="video-rank">#4</div>
-                        <video controls preload="metadata">
-                            <source src="Video_celulares.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-info">
+                        <div class="video-info-top">
                             <div class="video-title">📱 Celular</div>
-                            <div class="video-stats">
-                                <span class="clics-badge">44 clics</span>
-                            </div>
+                            <span class="clics-badge">44 clics</span>
                         </div>
+                        <iframe src="https://www.instagram.com/reel/DTt3atFDh3t/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                     </div>
                     
                     <!-- 5. Sala - 21 clics -->
-                    <div class="video-card">
+                    <div class="video-card-ig">
                         <div class="video-rank">#5</div>
-                        <video controls preload="metadata">
-                            <source src="video_salas.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-info">
+                        <div class="video-info-top">
                             <div class="video-title">🛋️ Sala</div>
-                            <div class="video-stats">
-                                <span class="clics-badge">21 clics</span>
-                            </div>
+                            <span class="clics-badge">21 clics</span>
                         </div>
+                        <iframe src="https://www.instagram.com/reel/DTitRC9lBVq/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                     </div>
                 </div>
             </div>
