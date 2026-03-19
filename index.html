@@ -58,7 +58,7 @@
         
         /* Charts Grid */
         .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; }
-        .chart-container { position: relative; height: 300px; }
+        .chart-container { position: relative; height: 300px; max-width: 700px; margin: 0 auto; }
         .chart-label { text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 10px; font-weight: 500; }
         
         /* Two Column Layout */
@@ -84,7 +84,11 @@
         .metric-views { background: #e3f2fd; color: #1565c0; }
         
         /* Hallazgos */
-        .hallazgo { background: #fffbf0; border-left: 4px solid #F7D117; padding: 15px; margin-bottom: 10px; border-radius: 0 8px 8px 0; }
+        .hallazgo { background: #fffbf0; border-left: 4px solid #F7D117; padding: 15px; margin-bottom: 10px; border-radius: 0 8px 8px 0; display: flex; align-items: flex-start; gap: 10px; }
+        .hallazgo-content { flex: 1; outline: none; }
+        .hallazgo-content:focus { background: #fff8e0; border-radius: 4px; padding: 5px; margin: -5px; }
+        .btn-remove { background: transparent; border: none; color: #dc3545; font-size: 1.2rem; cursor: pointer; padding: 0 5px; opacity: 0.5; transition: opacity 0.2s; }
+        .btn-remove:hover { opacity: 1; }
         .hallazgo-controls { display: flex; gap: 10px; margin-top: 15px; }
         .btn { padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer; font-weight: 500; transition: all 0.2s; }
         .btn-primary { background: #1E3A6E; color: white; }
@@ -93,14 +97,14 @@
         .btn-danger:hover { background: #c82333; }
         
         /* Video Gallery */
-        .video-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .video-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 250px)); gap: 20px; justify-content: center; }
         .video-card { background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; position: relative; }
         .video-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
         .video-rank { position: absolute; top: 10px; left: 10px; background: #1E3A6E; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
         .video-card:nth-child(1) .video-rank { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #333; }
         .video-card:nth-child(2) .video-rank { background: linear-gradient(135deg, #C0C0C0 0%, #A0A0A0 100%); color: #333; }
         .video-card:nth-child(3) .video-rank { background: linear-gradient(135deg, #CD7F32 0%, #A0522D 100%); }
-        .video-card video { width: 100%; height: 200px; object-fit: cover; background: #000; }
+        .video-card video { width: 100%; height: auto; aspect-ratio: 9/16; object-fit: contain; background: #000; }
         .video-info { padding: 15px; }
         .video-title { font-weight: 600; font-size: 1.1rem; color: #1E3A6E; margin-bottom: 8px; }
         .video-stats { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
@@ -504,7 +508,7 @@
             </div>
 
             <div class="section">
-                <h3 class="section-title">Videos de Creativos</h3>
+                <h3 class="section-title">Top de Videos por Clics</h3>
                 <div class="video-gallery">
                     <!-- 1. Cocina - 115 clics -->
                     <div class="video-card">
@@ -585,19 +589,24 @@
                 <h3 class="section-title">Hallazgos Clave</h3>
                 <div id="hallazgos-list">
                     <div class="hallazgo">
-                        <strong>📈 Interacciones sobresalientes:</strong> Las campañas de interacción superaron significativamente las metas (hasta 4,198% en IG NL).
+                        <div class="hallazgo-content" contenteditable="true"><strong>📈 Interacciones sobresalientes:</strong> Las campañas de interacción superaron significativamente las metas (hasta 4,198% en IG NL).</div>
+                        <button class="btn-remove" onclick="this.parentElement.remove()">✕</button>
                     </div>
                     <div class="hallazgo">
-                        <strong>⚠️ Alcance Morelia por debajo de meta:</strong> FB e IG no alcanzaron las metas de alcance en Morelia (83-84%).
+                        <div class="hallazgo-content" contenteditable="true"><strong>⚠️ Alcance Morelia por debajo de meta:</strong> FB e IG no alcanzaron las metas de alcance en Morelia (83-84%).</div>
+                        <button class="btn-remove" onclick="this.parentElement.remove()">✕</button>
                     </div>
                     <div class="hallazgo">
-                        <strong>🎯 YouTube alto rendimiento:</strong> Ambas audiencias superaron metas de TrueViews con CPV eficiente ($0.025 promedio).
+                        <div class="hallazgo-content" contenteditable="true"><strong>🎯 YouTube alto rendimiento:</strong> Ambas audiencias superaron metas de TrueViews con CPV eficiente ($0.025 promedio).</div>
+                        <button class="btn-remove" onclick="this.parentElement.remove()">✕</button>
                     </div>
                     <div class="hallazgo">
-                        <strong>📱 TikTok Morelia bajo:</strong> Solo alcanzó 37% de la meta de views +6s. NL cumplió con 106%.
+                        <div class="hallazgo-content" contenteditable="true"><strong>📱 TikTok Morelia bajo:</strong> Solo alcanzó 37% de la meta de views +6s. NL cumplió con 106%.</div>
+                        <button class="btn-remove" onclick="this.parentElement.remove()">✕</button>
                     </div>
                     <div class="hallazgo">
-                        <strong>🔥 Producto estrella:</strong> Cocina lidera en clics (115) e inversión. Motos segundo lugar.
+                        <div class="hallazgo-content" contenteditable="true"><strong>🔥 Producto estrella:</strong> Cocina lidera en clics (115) e inversión. Motos segundo lugar.</div>
+                        <button class="btn-remove" onclick="this.parentElement.remove()">✕</button>
                     </div>
                 </div>
                 <div class="hallazgo-controls">
@@ -932,10 +941,11 @@
             const div = document.createElement('div');
             div.className = 'hallazgo';
             div.innerHTML = `
-                <textarea style="width:100%; min-height:60px; border:1px solid #ddd; border-radius:4px; padding:10px;" placeholder="Escribe tu hallazgo aquí..."></textarea>
-                <button class="btn btn-danger" style="margin-top:10px;" onclick="this.parentElement.remove()">Eliminar</button>
+                <div class="hallazgo-content" contenteditable="true" placeholder="Escribe tu hallazgo aquí...">Nuevo hallazgo...</div>
+                <button class="btn-remove" onclick="this.parentElement.remove()">✕</button>
             `;
             container.appendChild(div);
+            div.querySelector('.hallazgo-content').focus();
         }
     </script>
 </body>
